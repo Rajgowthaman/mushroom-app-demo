@@ -3,8 +3,11 @@ import pandas as pd
 import numpy as np
 import pickle
 import joblib
+import os
 
 # Load model and features
+model_path = os.path.join(os.path.dirname(__file__), 'rf_model.pkl')
+model = pickle.load(open(model_path, 'rb'))
 model = pickle.load(open("rf_model.pkl", "rb"))
 features = joblib.load(open("rf_features.pkl", "rb"))
 
